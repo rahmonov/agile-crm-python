@@ -1,0 +1,4 @@
+
+
+class AgileCRM:
+    pass
