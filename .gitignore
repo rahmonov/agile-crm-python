@@ -4,3 +4,6 @@
 
 ### Compiled sources
 *.pyc
+
+# files
+main.py
