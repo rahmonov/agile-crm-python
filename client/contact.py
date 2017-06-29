@@ -8,3 +8,8 @@ class Contact:
         url = 'contacts/{id}'.format(id=contact_id)
 
         return self.requester.get(url)
+
+    def delete(self, contact_id):
+        url = 'contacts/{id}'.format(id=contact_id)
+
+        return self.requester.delete(url)
