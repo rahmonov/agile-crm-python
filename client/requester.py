@@ -16,8 +16,9 @@ class Requester:
         response = requests.get(url, auth=self.auth, headers=headers)
 
         if not response.ok:
-            error = 'HTTPError: {}, Details: {}'.format(response.status_code, response.text)
+            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
 
-            return {'ok': False, 'error': error}
+        if not response.status_code == 200:
+            return {'status_code': response.status_code, 'text': response.text, 'ok': True}
 
         return response.json()
