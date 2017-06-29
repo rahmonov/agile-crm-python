@@ -8,3 +8,8 @@ class Company:
         url = 'contacts/{id}'.format(id=company_id)
 
         return self.requester.get(url)
+
+    def delete(self, company_id):
+        url = 'contacts/{id}'.format(id=company_id)
+
+        return self.requester.delete(url)
