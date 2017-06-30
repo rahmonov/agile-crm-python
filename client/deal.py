@@ -20,3 +20,8 @@ class Deal:
         url = 'opportunity/{deal_id}'.format(deal_id=deal_id)
 
         return self.requester.get(url)
+
+    def delete(self, deal_id):
+        url = 'opportunity/{deal_id}'.format(deal_id=deal_id)
+
+        return self.requester.delete(url)
