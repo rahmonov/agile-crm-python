@@ -23,10 +23,10 @@ class Requester:
 
         return response.json()
 
-    def delete(self, url):
+    def post(self, url, data):
         url = self.base_url + url
 
-        response = requests.delete(url, auth=self.auth, headers=self.headers)
+        response = requests.post(url, json=data, auth=self.auth, headers=self.headers)
 
         if not response.ok:
             return {'status_code': response.status_code, 'text': response.text, 'ok': False}
@@ -35,3 +35,16 @@ class Requester:
             return {'status_code': response.status_code, 'text': response.text, 'ok': True}
 
         return response.json()
+
+    def delete(self, url):
+        url = self.base_url + url
+
+        response = requests.delete(url, auth=self.auth, headers=self.headers)
+
+        if not response.ok:
+            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+
+        if not response.status_code == 204:
+            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+
+        return {'status_code': response.status_code, 'text': response.text, 'ok': True}
