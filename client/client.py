@@ -1,5 +1,6 @@
 from .company import Company
 from .contact import Contact
+from .deal import Deal
 from .requester import Requester
 
 
@@ -9,3 +10,4 @@ class AgileCRM:
 
         self.contact = Contact(requester=requester)
         self.company = Company(requester=requester)
+        self.deal = Deal(requester=requester)
