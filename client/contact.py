@@ -87,3 +87,8 @@ class Contact:
         }
 
         return self.requester.post(url, data)
+
+    def get_notes(self, contact_id):
+        url = 'contacts/{contact_id}/notes'.format(contact_id=contact_id)
+
+        return self.requester.get(url)
