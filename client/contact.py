@@ -25,3 +25,13 @@ class Contact:
         url = 'contacts/{id}'.format(id=contact_id)
 
         return self.requester.delete(url)
+
+    def set_lead_score(self, contact_id, lead_score):
+        url = 'contacts/edit/lead-score'
+
+        data = {
+            'id': contact_id,
+            'lead_score': lead_score
+        }
+
+        return self.requester.put(url, data)
