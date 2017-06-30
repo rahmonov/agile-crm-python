@@ -65,3 +65,14 @@ class Contact:
         }
 
         return self.requester.put(url, data)
+
+    def find(self, q, page_size=10):
+        url = 'search'
+
+        params = {
+            'q': q,
+            'page_size': page_size,
+            'type': 'PERSON'
+        }
+
+        return self.requester.get(url, params)

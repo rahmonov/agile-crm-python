@@ -10,10 +10,10 @@ class Requester:
             'content-type': 'application/json',
         }
 
-    def get(self, url):
+    def get(self, url, params=None):
         url = self.base_url + url
 
-        response = requests.get(url, auth=self.auth, headers=self.headers)
+        response = requests.get(url, auth=self.auth, headers=self.headers, params=params)
 
         if not response.ok:
             return {'status_code': response.status_code, 'text': response.text, 'ok': False}
