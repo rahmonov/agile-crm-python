@@ -12,6 +12,13 @@ class Company:
 
         return self.requester.post(url, company_data)
 
+    def update(self, company_id, company_data):
+        url = 'contacts/edit-properties'
+
+        company_data['id'] = company_id
+
+        return self.requester.put(url, company_data)
+
     def fetch(self, company_id):
         url = 'contacts/{id}'.format(id=company_id)
 
