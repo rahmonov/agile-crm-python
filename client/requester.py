@@ -36,6 +36,19 @@ class Requester:
 
         return response.json()
 
+    def put(self, url, data):
+        url = self.base_url + url
+
+        response = requests.put(url, json=data, auth=self.auth, headers=self.headers)
+
+        if not response.ok:
+            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+
+        if not response.status_code == 200:
+            return {'status_code': response.status_code, 'text': response.text, 'ok': True}
+
+        return response.json()
+
     def delete(self, url):
         url = self.base_url + url
 

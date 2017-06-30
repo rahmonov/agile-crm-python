@@ -14,6 +14,13 @@ class Contact:
 
         return self.requester.get(url)
 
+    def update(self, contact_id, contact_data):
+        url = 'contacts/edit-properties'
+
+        contact_data['id'] = contact_id
+
+        return self.requester.put(url, contact_data)
+
     def delete(self, contact_id):
         url = 'contacts/{id}'.format(id=contact_id)
 
