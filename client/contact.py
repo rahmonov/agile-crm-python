@@ -45,3 +45,13 @@ class Contact:
         }
 
         return self.requester.put(url, data)
+
+    def set_tags(self, contact_id, tags):
+        url = 'contacts/edit/tags'
+
+        data = {
+            'id': contact_id,
+            'tags': tags
+        }
+
+        return self.requester.put(url, data)
