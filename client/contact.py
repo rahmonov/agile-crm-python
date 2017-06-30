@@ -76,3 +76,14 @@ class Contact:
         }
 
         return self.requester.get(url, params)
+
+    def add_notes(self, contact_id, subject, description):
+        url = 'notes'
+
+        data = {
+            'subject': subject,
+            'description': description,
+            'contact_ids': [contact_id]
+        }
+
+        return self.requester.post(url, data)
