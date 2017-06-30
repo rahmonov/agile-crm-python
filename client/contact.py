@@ -35,3 +35,13 @@ class Contact:
         }
 
         return self.requester.put(url, data)
+
+    def set_star_value(self, contact_id, star_value):
+        url = 'contacts/edit/add-star'
+
+        data = {
+            'id': contact_id,
+            'star_value': star_value
+        }
+
+        return self.requester.put(url, data)
