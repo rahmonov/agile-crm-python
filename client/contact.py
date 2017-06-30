@@ -55,3 +55,13 @@ class Contact:
         }
 
         return self.requester.put(url, data)
+
+    def remove_tags(self, contact_id, tags_to_remove):
+        url = 'contacts/delete/tags'
+
+        data = {
+            'id': contact_id,
+            'tags': tags_to_remove
+        }
+
+        return self.requester.put(url, data)

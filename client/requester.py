@@ -21,7 +21,7 @@ class Requester:
         if not response.status_code == 200:
             return {'status_code': response.status_code, 'text': response.text, 'ok': True}
 
-        return response.json()
+        return {'status_code': response.status_code, 'data': response.json(), 'ok': True}
 
     def post(self, url, data):
         url = self.base_url + url
@@ -34,7 +34,7 @@ class Requester:
         if not response.status_code == 200:
             return {'status_code': response.status_code, 'text': response.text, 'ok': True}
 
-        return response.json()
+        return {'status_code': response.status_code, 'data': response.json(), 'ok': True}
 
     def put(self, url, data):
         url = self.base_url + url
@@ -47,7 +47,7 @@ class Requester:
         if not response.status_code == 200:
             return {'status_code': response.status_code, 'text': response.text, 'ok': True}
 
-        return response.json()
+        return {'status_code': response.status_code, 'data': response.json(), 'ok': True}
 
     def delete(self, url):
         url = self.base_url + url
