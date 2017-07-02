@@ -92,3 +92,8 @@ class Contact:
         url = 'contacts/{contact_id}/notes'.format(contact_id=contact_id)
 
         return self.requester.get(url)
+
+    def delete_note(self, contact_id, note_id):
+        url = 'contacts/{contact_id}/notes/{note_id}'.format(contact_id=contact_id, note_id=note_id)
+
+        return self.requester.delete(url)
