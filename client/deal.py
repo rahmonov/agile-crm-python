@@ -26,6 +26,11 @@ class Deal:
 
         return self.requester.delete(url)
 
+    def get_notes(self, deal_id):
+        url = 'opportunity/{deal_id}/notes'.format(deal_id=deal_id)
+
+        return self.requester.get(url)
+
     def add_notes(self, deal_id, subject, description):
         url = 'notes'
 
