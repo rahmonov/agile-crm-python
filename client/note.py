@@ -25,3 +25,15 @@ class Note:
         }
 
         return self.requester.post(url, data)
+
+    def update_for_deals(self, note_id, subject, description, deal_ids):
+        url = 'opportunity/deals/notes'
+
+        update_note_deal_data = {
+            "id": note_id,
+            "subject": subject,
+            "description": description,
+            "deal_ids": deal_ids
+        }
+
+        return self.requester.put(url, update_note_deal_data)
