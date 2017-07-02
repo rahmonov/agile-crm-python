@@ -14,3 +14,14 @@ class Note:
         }
 
         return self.requester.post(url, data)
+
+    def add_to_deals(self, subject, description, deal_ids):
+        url = 'opportunity/deals/notes'
+
+        data = {
+            'subject': subject,
+            'description': description,
+            'deal_ids': deal_ids
+        }
+
+        return self.requester.post(url, data)
