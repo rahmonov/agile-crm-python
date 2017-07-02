@@ -25,3 +25,14 @@ class Deal:
         url = 'opportunity/{deal_id}'.format(deal_id=deal_id)
 
         return self.requester.delete(url)
+
+    def add_notes(self, deal_id, subject, description):
+        url = 'notes'
+
+        data = {
+            'subject': subject,
+            'description': description,
+            'deal_ids': [deal_id]
+        }
+
+        return self.requester.post(url, data)
