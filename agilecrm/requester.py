@@ -1,6 +1,6 @@
 import requests
 
-from client.responses import SuccessResponse, ErrorResponse, NonSuccessResponse
+from agilecrm.responses import SuccessResponse, ErrorResponse, NonSuccessResponse
 
 
 class Requester:
