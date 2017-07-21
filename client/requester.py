@@ -1,5 +1,7 @@
 import requests
 
+from client.responses import SuccessResponse, ErrorResponse, NonSuccessResponse
+
 
 class Requester:
     def __init__(self, domain, email, api_key):
@@ -16,12 +18,12 @@ class Requester:
         response = requests.get(url, auth=self.auth, headers=self.headers, params=params)
 
         if not response.ok:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+            return ErrorResponse(status=response.status_code, text=response.text)
 
         if not response.status_code == 200:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': True}
+            return NonSuccessResponse(status=response.status_code, text=response.text)
 
-        return {'status_code': response.status_code, 'data': response.json(), 'ok': True}
+        return SuccessResponse(data=response.json())
 
     def post(self, url, data):
         url = self.base_url + url
@@ -29,12 +31,12 @@ class Requester:
         response = requests.post(url, json=data, auth=self.auth, headers=self.headers)
 
         if not response.ok:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+            return ErrorResponse(status=response.status_code, text=response.text)
 
         if not response.status_code == 200:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': True}
+            return NonSuccessResponse(status=response.status_code, text=response.text)
 
-        return {'status_code': response.status_code, 'data': response.json(), 'ok': True}
+        return SuccessResponse(data=response.json())
 
     def put(self, url, data):
         url = self.base_url + url
@@ -42,12 +44,12 @@ class Requester:
         response = requests.put(url, json=data, auth=self.auth, headers=self.headers)
 
         if not response.ok:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+            return ErrorResponse(status=response.status_code, text=response.text)
 
         if not response.status_code == 200:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': True}
+            return NonSuccessResponse(status=response.status_code, text=response.text)
 
-        return {'status_code': response.status_code, 'data': response.json(), 'ok': True}
+        return SuccessResponse(data=response.json())
 
     def delete(self, url):
         url = self.base_url + url
@@ -55,9 +57,9 @@ class Requester:
         response = requests.delete(url, auth=self.auth, headers=self.headers)
 
         if not response.ok:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+            return ErrorResponse(status=response.status_code, text=response.text)
 
         if not response.status_code == 204:
-            return {'status_code': response.status_code, 'text': response.text, 'ok': False}
+            return ErrorResponse(status=response.status_code, text=response.text)
 
-        return {'status_code': response.status_code, 'text': response.text, 'ok': True}
+        return SuccessResponse(text=response.text)
