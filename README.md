@@ -24,44 +24,19 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
 ### Table of contents
 
 **[1 Contact](#1-contact)**
-  * [1 To create a contact](#11-to-create-a-contact)
-  * [2 To fetch contact data](#12-to-fetch-contact-data)
-  * [3 To delete a contact](#13-to-delete-a-contact)
-  * [4 To update a contact](#14-to-update-a-contact)
-  * [5 Update lead score by ID](#15-update-lead-score-by-id)
-  * [6 Update star value by ID](#16-update-star-value-by-id)
-  * [7 Update tags value by ID](#17-update-tags-value-by-id)
-  * [8 Delete tags value by ID](#18-delete-tags-value-by-id)
-  * [9 Search contacts/companies](#19-search-contactscompanies)
-  * [10 Adding tags to a contact based on email](#110-adding-tags-to-a-contact-based-on-email)
-  * [11 Delete tags to a contact based on email](#111-delete-tags-to-a-contact-based-on-email)
-  * [12 Add score to a contact using email ID](#112-add-score-to-a-contact-using-email-id)
+  * [1 Create a contact](#11-create-a-contact)
+  * [2 Fetch contact by ID](#12-fetch-a-contact-by-id)
+  * [3 Delete a contact by ID](#13-delete-a-contact-by-id)
+  * [4 Update a contact by ID](#14-update-a-contact-by-id)
+  * [5 Set a lead score for a contact](#15-set-a-lead-score-for-a-contact)
+  * [6 Set a star value for a contact](#16-set-a-star-value-for-a-contact)
+  * [7 Add a tag to a contact](#17-add-a-tag-to-a-contact)
+  * [8 Remove a tag from a contact](#18-remove-a-tag-from-a-contact)
+  * [9 Search for a contact](#19-search-for-a-contact)
+  * [10 Add a note to a contact](#110-add-a-note-to-a-contact)
+  * [11 Get notes of a contact](#111-get-notes-of-a-contact)
+  * [12 Delete a note of a contact](#112-delete-a-note-of-a-contact)
   
-
-**[2. Company](#2-company)**
-  * [1 To create a company](#21-to-create-a-company)
-  * [2 To update a company](#22-to-update-a-company)
-  * [3 To get a company by company id](#23-to-get-a-company-by-company-id)
-  * [4 To delete a company by company id](#24-to-delete-a-company-by-company-id)
- 
-**[3. Deal (Opportunity)](#3-deal)**
-  * [1 To create a deal](#31-to-create-a-deal)
-  * [2 To update a deal](#32-to-update-a-deal)
-  * [3 Create deal to a contact using email ID](#33-create-deal-to-a-contact-using-email-id)
-  * [4 Get list of deal](#34-get-list-of-deal)
-  * [5 Get deal by ID](#35-get-deal-by-id)
-  * [6 Delete deal by ID](#36-delete-deal-by-id)
-
-**[4. Note ](#4-note)**
-  * [1 Create a note and relate that to contacts](#41-create-a-note-and-relate-that-to-contacts)
-  * [2 Add note to a contact using email ID](#42-add-note-to-a-contact-using-email-id)
-  * [3 Gets notes related to specific contact](#43-gets-notes-related-to-specific-contact)
-  * [4 Delete a specific note from specific contact](#44-delete-a-specific-note-from-specific-contact)
-  * [5 Create note to a deal](#45-create-note-to-a-deal)
-  * [6 Update note to a deal](#46-update-note-to-a-deal)
-  * [7 Gets notes related to specific deal](#47-gets-notes-related-to-specific-deal)
-  
-     
     All the following examples assume that you have agile_client configured as shown above
          
 #### 1. Contact
