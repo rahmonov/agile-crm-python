@@ -36,6 +36,8 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
   * [10 Add a note to a contact](#110-add-a-note-to-a-contact)
   * [11 Get notes of a contact](#111-get-notes-of-a-contact)
   * [12 Delete a note of a contact](#112-delete-a-note-of-a-contact)
+**[2 Company](#2-company)**
+  * [1 Create a company](#11-create-a-company)
   
     All the following examples assume that you have agile_client configured as shown above
          
@@ -141,3 +143,87 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
     
     respose = agile_client.contact.delete_note(contact_id='5689413791121408', note_id='5755685136498688')
 
+#### 2. Company
+
+#####  2.1 Create a company
+
+    company_data = {
+        "type": "COMPANY",
+        "star_value": 4,
+        "lead_score": 120,
+        "tags": [
+            "Permanent",
+            "USA",
+        ],
+        "properties": [
+            {
+                "name": "Company Type",
+                "type": "CUSTOM",
+                "value": "MNC Inc"
+            },
+            {
+                "type": "SYSTEM",
+                "name": "name",
+                "value": "Spicejet"
+            },
+            {
+                "type": "SYSTEM",
+                "name": "url",
+                "value": "http://www.spicejet.com/"
+            },
+            {
+                "name": "email",
+                "value": "care@spicejet.com  ",
+                "subtype": ""
+            },
+            {
+                "name": "phone",
+                "value": "45500000",
+                "subtype": ""
+            },
+            {
+                "name": "website",
+                "value": "http://www.linkedin.com/company/agile-crm",
+                "subtype": "LINKEDIN"
+            },
+            {
+                "name": "address",
+                "value": "{\"address\":\"MS 35, 440 N Wolfe Road\",\"city\":\"Sunnyvale\",\"state\":\"CA\",\"zip\":\"94085\",\"country\":\"US\"}",
+                "subtype": "office"
+            }
+        ]
+    }
+    
+    response = agile_client.company.create(company_data)
+    
+#####  2.2 Get a company by id    
+    
+    respose = agile_client.company.fetch('5712536552865792')
+    
+#####  2.3 Update a company
+
+    new_company_data = {
+        "properties": [
+            {
+                "type": "SYSTEM",
+                "name": "name",
+                "value": "SPICE JET"
+            },
+            {
+                "type": "SYSTEM",
+                "name": "url",
+                "value": "http://www.spicejet.com/"
+            },
+            {
+                "name": "phone",
+                "value": "45500000",
+                "subtype": ""
+            }
+        ]
+    }
+
+    response = agile_client.company.update('5712536552865792', new_company_data)
+    
+#####  2.4 Delete a company by id
+
+    response = agile_client.company.delete('5712536552865792')
