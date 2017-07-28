@@ -25,7 +25,7 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
 
 **[1 Contact](#1-contact)**
   * [1 Create a contact](#11-create-a-contact)
-  * [2 Fetch contact by ID](#12-fetch-a-contact-by-id)
+  * [2 Fetch a contact by ID](#12-fetch-a-contact-by-id)
   * [3 Delete a contact by ID](#13-delete-a-contact-by-id)
   * [4 Update a contact by ID](#14-update-a-contact-by-id)
   * [5 Set a lead score for a contact](#15-set-a-lead-score-for-a-contact)
@@ -36,8 +36,13 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
   * [10 Add a note to a contact](#110-add-a-note-to-a-contact)
   * [11 Get notes of a contact](#111-get-notes-of-a-contact)
   * [12 Delete a note of a contact](#112-delete-a-note-of-a-contact)
+  
 **[2 Company](#2-company)**
-  * [1 Create a company](#11-create-a-company)
+  * [1 Create a company](#21-create-a-company)
+  * [2 Fetch a company by ID](#22-fetch-a-company-by-id)
+  * [3 Update a company by ID](#23-update-a-company-by-id)
+  * [4 Delete a company by ID](#24-delete-a-company-by-id)
+  
   
     All the following examples assume that you have agile_client configured as shown above
          
@@ -143,6 +148,8 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
     
     respose = agile_client.contact.delete_note(contact_id='5689413791121408', note_id='5755685136498688')
 
+
+
 #### 2. Company
 
 #####  2.1 Create a company
@@ -196,11 +203,11 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
     
     response = agile_client.company.create(company_data)
     
-#####  2.2 Get a company by id    
+#####  2.2 Fetch a company by id    
     
     respose = agile_client.company.fetch('5712536552865792')
     
-#####  2.3 Update a company
+#####  2.3 Update a company by id
 
     new_company_data = {
         "properties": [
