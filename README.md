@@ -43,6 +43,17 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
   * [3 Update a company by ID](#23-update-a-company-by-id)
   * [4 Delete a company by ID](#24-delete-a-company-by-id)
   
+**[3 Deal](#3-deal)**
+  * [1 Create a dea](#31-create-a-deal)
+  * [2 Update a deal by ID](#33-update-a-deal-by-id)
+  * [2 Fetch a deal by ID](#32-fetch-a-deal-by-id)
+  * [4 Delete a deal by ID](#34-delete-a-deal-by-id)  
+  * [5 Get notes of a deal](#35-get-notes-of-a-deal)  
+  * [6 Add notes to a deal](#36-add-notes-to-a-deal)  
+  * [7 Update note of a deal](#37-update-note-of-a-deal)  
+  
+  
+  
   
     All the following examples assume that you have agile_client configured as shown above
          
@@ -234,3 +245,8 @@ A Python interface for the [Agile CRM API](https://github.com/agilecrm/rest-api)
 #####  2.4 Delete a company by id
 
     response = agile_client.company.delete('5712536552865792')
+    
+    
+#### 3. Deal
+
+#####  3.1 Create a deal
